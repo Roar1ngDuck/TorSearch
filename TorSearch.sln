@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TorSearch.Backend", "TorSearch.Backend\TorSearch.Backend.csproj", "{54229DFE-A2EF-4EBF-8581-201B5C64DD2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TorSearch.Frontend", "TorSearch.Frontend\TorSearch.Frontend.csproj", "{210481AA-8188-4733-8D1C-14A1C169AA15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorSearch.Scraper", "TorSearch.Scraper\TorSearch.Scraper.csproj", "{6981FFBC-8B8B-4886-A67B-BAF266D4796B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B09A9FAF-4319-40A2-B25F-3C15053E9BD8}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yml = compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54229DFE-A2EF-4EBF-8581-201B5C64DD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54229DFE-A2EF-4EBF-8581-201B5C64DD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54229DFE-A2EF-4EBF-8581-201B5C64DD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54229DFE-A2EF-4EBF-8581-201B5C64DD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210481AA-8188-4733-8D1C-14A1C169AA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210481AA-8188-4733-8D1C-14A1C169AA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210481AA-8188-4733-8D1C-14A1C169AA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210481AA-8188-4733-8D1C-14A1C169AA15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6981FFBC-8B8B-4886-A67B-BAF266D4796B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6981FFBC-8B8B-4886-A67B-BAF266D4796B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6981FFBC-8B8B-4886-A67B-BAF266D4796B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6981FFBC-8B8B-4886-A67B-BAF266D4796B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3833D81-5FB0-40B7-A5EB-2CD23C87366B}
+	EndGlobalSection
+EndGlobal

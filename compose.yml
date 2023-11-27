@@ -1,0 +1,51 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: TorSearch.Backend/Dockerfile
+    ports:
+      - "8002:80"
+    depends_on:
+      - elasticsearch
+    environment:
+      - "ElasticSearch__Uri=http://elasticsearch:9200"
+    networks:
+      - net1
+
+  frontend:
+    build:
+      context: .
+      dockerfile: TorSearch.Frontend/Dockerfile
+    ports:
+      - "8003:80"
+    networks:
+      - net1
+  
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.15
+    environment:
+      - "discovery.type=single-node"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - net1
+
+  scraper:
+    build:
+      context: .
+      dockerfile: TorSearch.Scraper/Dockerfile
+    depends_on:
+      - backend
+    networks:
+      - net1
+
+volumes:
+  esdata:
+
+networks:
+  net1:
+    external: true

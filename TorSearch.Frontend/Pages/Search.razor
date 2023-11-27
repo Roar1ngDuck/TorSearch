@@ -1,0 +1,60 @@
+﻿@page "/search"
+@page "/search/{SearchText}/{PageNumber:int?}"
+@inject SearchService SearchService
+@using TorSearch.Frontend.Data
+@using TorSearch.Frontend.Services;
+
+<h3>TorSearch</h3>
+
+<div class="search-view-container">
+    <SearchBox />
+</div>
+
+<div class="search-results">
+    @foreach (var result in searchResults)
+    {
+        <div class="search-result">
+            <a href="@result.Url">
+                <div class="search-url">
+                    @result.Url
+                </div>
+                <div class="search-title">
+                    @result.Title
+                </div>
+                <div class="search-html">
+                    @if (result.Description != null && result.Description.Length > 0)
+                    {
+                        if (result.Description.Length > 100)
+                        {
+                            result.Description = result.Description.Substring(0, 100) + "...";
+                        }
+                        @result.Description
+                    }
+                    else
+                    {
+                        if (result.Html != null && result.Html.Length > 100)
+                        {
+                            result.Html = result.Html.Substring(0, 100) + "...";
+                        }
+                        @result.Html
+                    }
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string SearchText { get; set; } = string.Empty;
+
+    [Parameter]
+    public int PageNumber { get; set; } = 1;
+
+    private List<DomainInfo> searchResults = new List<DomainInfo>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        searchResults = await SearchService.SearchAsync(SearchText, PageNumber);
+    }
+}

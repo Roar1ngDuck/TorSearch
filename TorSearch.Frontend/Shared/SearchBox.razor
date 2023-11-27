@@ -1,0 +1,18 @@
+﻿@page "/searchbox"
+@inject NavigationManager NavManager
+
+<EditForm Model="@searchText" OnValidSubmit="@HandleValidSubmit">
+    <InputText id="search-box-form" @bind-Value="searchText" />
+
+    <button id="search-button" type="submit">Search</button>
+
+</EditForm>
+
+@code {
+    private string searchText = string.Empty;
+
+    private void HandleValidSubmit()
+    {
+        NavManager.NavigateTo($"/search/{searchText}/1");
+    }
+}
